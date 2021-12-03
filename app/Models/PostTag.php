@@ -9,5 +9,5 @@ class PostTag extends Model
 {
     use HasFactory;
 
-
+    protected $guarded = [];
 }

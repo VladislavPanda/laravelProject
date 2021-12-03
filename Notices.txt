@@ -35,6 +35,7 @@ php artisan migrate:rollback - откат всех миграций
 4. Выполнить накат миграций (php artisan migrate)
 
 Для изменения типа поля:
+0. 1. Установть библиотеку doctrine/DBAL: composer require doctrine/dbal
 1. В up: $table->новый_тип('название_поля')->change();
 2. В down: $table->текущий_тип('название_поля')->change();
 
