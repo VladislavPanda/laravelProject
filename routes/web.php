@@ -19,8 +19,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'MainController@index')->name('main.index');
 
+//Route::get('/posts/{post}/edit', 'EditController@__invoke')->name('posts.edit');
+
+Route::group(['namespace' => 'Post'], function(){
+    Route::get('/posts', 'IndexController')->name('posts.index');
+    Route::get('/posts/create', 'CreateController')->name('posts.create');
+    Route::post('/posts', 'StoreController')->name('posts.store');
+    Route::get('/posts/{post}', 'ShowController')->name('posts.show');
+    //Route::get('/posts/{post}/edit', 'EditController')->name('posts.edit');
+    Route::patch('/posts/{post}', 'UpdateController')->name('posts.update');
+    Route::delete('/posts/{post}', 'DeleteController')->name('posts.delete');
+});
+
+
+
 // Роуты постов
-Route::get('/posts', 'PostController@index')->name('posts.index');
+/*Route::get('/posts', 'PostController@index')->name('posts.index');
 Route::get('/posts/create', 'PostController@create')->name('posts.create');
 Route::post('/posts', 'PostController@store')->name('posts.store');
 Route::get('/posts/{post}', 'PostController@show')->name('posts.show');
@@ -29,7 +43,7 @@ Route::patch('/posts/{post}', 'PostController@update')->name('posts.update');
 Route::delete('/posts/{post}', 'PostController@destroy')->name('posts.delete');
 
 Route::get('/posts/first_or_create', 'PostController@firstOrCreate');
-Route::get('/posts/update_or_create', 'PostController@updateOrCreate');
+Route::get('/posts/update_or_create', 'PostController@updateOrCreate');*/
 
 Route::get('/about', 'AboutController@index')->name('about.index');
 

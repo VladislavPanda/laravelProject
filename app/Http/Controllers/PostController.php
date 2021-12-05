@@ -10,9 +10,8 @@ use App\Models\PostTag;
 
 class PostController extends Controller
 {
-    public function index(){
+    /*public function index(){
         $posts = Post::all();
-
         return view('posts.index', compact('posts'));
     }
 
@@ -37,12 +36,12 @@ class PostController extends Controller
         //dd($data);
 
         $post = Post::create($data);
-        /*foreach($tags as $tag){
-            PostTag::firstOrCreate([
-                'post_id' => $post->id,
-                'tag_id' => $tag
-            ]);
-        }*/
+        //foreach($tags as $tag){
+            //PostTag::firstOrCreate([
+            //    'post_id' => $post->id,
+            //    'tag_id' => $tag
+            //]);
+        //}
 
         $post->tags()->attach($tags);
 
@@ -127,5 +126,5 @@ class PostController extends Controller
         ]);
 
         dd($post);
-    }
+    }*/
 }
