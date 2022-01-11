@@ -26,12 +26,10 @@ Route::group(['namespace' => 'Post'], function(){
     Route::get('/posts/create', 'CreateController')->name('posts.create');
     Route::post('/posts', 'StoreController')->name('posts.store');
     Route::get('/posts/{post}', 'ShowController')->name('posts.show');
-    //Route::get('/posts/{post}/edit', 'EditController')->name('posts.edit');
+    Route::get('/posts/{post}/edit', 'EditController')->name('posts.edit');
     Route::patch('/posts/{post}', 'UpdateController')->name('posts.update');
     Route::delete('/posts/{post}', 'DeleteController')->name('posts.delete');
 });
-
-
 
 // Роуты постов
 /*Route::get('/posts', 'PostController@index')->name('posts.index');
